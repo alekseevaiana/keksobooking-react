@@ -19,7 +19,7 @@ export default class Map extends Component {
     })
   };
 
-  onPinClick = () => {
+  onPinClickEvent = () => {
     this.setState({onPinClicked: true
     })
   };
@@ -36,7 +36,9 @@ export default class Map extends Component {
       return <Pin
         key={item.id}
         item={item}
-        onPinClicked={() => (console.log('hi', item.id))}/>
+        onPinClicked={this.onPinClickEvent}
+        // onPinClicked={() => (console.log('hi', item.id))}
+      />
     });
 
     if (onMainPinClicked) {
@@ -46,15 +48,16 @@ export default class Map extends Component {
 
     let card = '';
 
-    // const createNewCard = (houses) => {
-    //   return <Card
-    //     key={houses[0].id}
-    //   />
-    // };
+    const createNewCard = (item) => {
+      return <Card
+        key={item.id}
+        item={item}
+      />
+    };
 
-    // if (onPinClicked) {
-    //   card = createNewCard;
-    // }
+    if (onPinClicked) {
+      card = createNewCard(houses[0]);
+    }
 
 
     return (
