@@ -1,0 +1,12 @@
+.notice {
+    margin: 0 120px;
+    padding: 30px 0;
+}
+
+.notice__title {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    font-size: 28px;
+    font-weight: 700;
+}

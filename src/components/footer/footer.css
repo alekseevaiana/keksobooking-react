@@ -1,0 +1,114 @@
+.footer {
+    margin-top: 30px;
+    padding-top: 30px;
+    border-top: solid 1px #cccccc;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+
+.copyright {
+    font-size: 12px;
+}
+
+.copyright__link--image {
+    display: block;
+}
+
+.copyright__link:hover {
+    opacity: 0.6;
+}
+
+.copyright__link:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 2px 2px #ff6547;
+    box-shadow: 0 0 2px 2px #ff6547;
+}
+
+.copyright__link--text {
+    color: #353535;
+}
+
+.footer__contacts {
+    background-color: inherit;
+}
+
+.contacts {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+}
+
+.contacts__link {
+    display: block;
+
+    width: 29px;
+    height: 29px;
+    margin-left: 10px;
+
+    font-size: 0;
+
+    background-image: url("../../img/sprite-social.svg");
+    background-repeat: no-repeat;
+    background-size: 29px 274px;
+
+    cursor: pointer;
+}
+
+.contacts__link:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 2px 2px #ff6547;
+    box-shadow: 0 0 2px 2px #ff6547;
+}
+
+.contacts__link--twitter {
+    background-position: 0 0;
+}
+
+.contacts__link--instagram {
+    background-position: 0 -35px;
+}
+
+.contacts__link--facebook {
+    background-position: 0 -70px;
+}
+
+.contacts__link--vk {
+    background-position: 0 -105px;
+}
+
+.contacts__link--twitter:hover,
+.contacts__link--twitter:focus {
+    background-position: 0 -140px;
+}
+
+.contacts__link--instagram:hover,
+.contacts__link--instagram:focus {
+    background-position: 0 -175px;
+}
+
+.contacts__link--facebook:hover,
+.contacts__link--facebook:focus {
+    background-position: 0 -210px;
+}
+
+.contacts__link--vk:hover,
+.contacts__link--vk:focus {
+    background-position: 0 -245px;
+}
+
+.contacts__link:focus {
+    -webkit-box-shadow: 0 0 2px 2px #ff6547;
+    box-shadow: 0 0 2px 2px #ff6547;
+}

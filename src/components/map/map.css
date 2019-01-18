@@ -1,0 +1,374 @@
+.map {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+
+    overflow: hidden;
+    height: 750px;
+
+    background-color: #82bcc0;
+    background-image: url("../../img/map.jpg");
+    background-repeat: no-repeat;
+    background-position: center bottom;
+
+    border-radius: 0 0 10px 10px;
+}
+
+.map__pins {
+    position: relative;
+    width: 100%;
+    -webkit-box-flex: 1;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+}
+
+.map__overlay {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    -webkit-transition: opacity 300ms ease-in;
+    -o-transition: opacity 300ms ease-in;
+    transition: opacity 300ms ease-in;
+
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+}
+
+.map__title {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    margin-top: 170px;
+
+    font-size: 85px;
+    font-weight: 700;
+    text-align: center;
+    color: #ffffff;
+}
+
+.map--faded .map__overlay {
+    opacity: 1;
+}
+
+
+/**
+ * Метка объявления
+ */
+
+.map__pin {
+    position: absolute;
+    z-index: 1;
+
+    width: 50px;
+    height: 70px;
+    margin: 0;
+    padding: 0;
+
+    border: 0;
+    background: none;
+}
+
+.map__pin:focus {
+    outline: none;
+    -webkit-filter: drop-shadow(0 0 5px red);
+    filter: drop-shadow(0 0 5px red);
+}
+
+.map__pin img {
+    position: absolute;
+    z-index: 1;
+
+    top: 5px;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    border-radius: 50%;
+}
+
+.map__pin:not(.map__pin--main)::after {
+    content: "";
+    position: absolute;
+
+    width: 50px;
+    height: 70px;
+
+    top: 0;
+    left: 0;
+
+    background-image: url("../../img/pins.svg");
+    background-repeat: no-repeat;
+    background-position: 0 -9px;
+}
+
+.map__pin:not(.map__pin--main):hover::after,
+.map__pin:not(.map__pin--main):active::after,
+.map__pin--active:not(.map__pin--main)::after {
+    background-position: 0 -88px;
+}
+
+.map__pin:active img,
+.map__pin--active img {
+    -webkit-box-shadow: 0 0 15px 15px rgba(255, 86, 53, 0.7);
+    box-shadow: 0 0 15px 15px rgba(255, 86, 53, 0.7);
+}
+
+.map__pin--main {
+    width: 65px;
+    height: 65px;
+
+    cursor: move;
+}
+
+.map__pin--main img {
+    position: relative;
+    z-index: 1;
+
+    padding: 2px 6px 6px;
+
+    -webkit-transform: translateY(-7px);
+    -ms-transform: translateY(-7px);
+    transform: translateY(-7px);
+
+    border: solid 5px #ff5635;
+    border-radius: 50%;
+    background-color: #ffffff;
+
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+.map__pin--main:active img,
+.map__pin--main--active img {
+    background-color: #ffffff;
+}
+
+.map__pin--main svg {
+    position: absolute;
+    z-index: 0;
+    top: -50px;
+    left: -47px;
+
+    width: 156px;
+    height: 156px;
+
+    -webkit-transition: -webkit-transform 300ms ease-in;
+    transition: -webkit-transform 300ms ease-in;
+    -o-transition: transform 300ms ease-in;
+    transition: transform 300ms ease-in;
+    transition: transform 300ms ease-in, -webkit-transform 300ms ease-in;
+    -webkit-transform: rotate(120deg) scale(0);
+    -ms-transform: rotate(120deg) scale(0);
+    transform: rotate(120deg) scale(0);
+    -webkit-transform-origin: 78px 78px;
+    -ms-transform-origin: 78px 78px;
+    transform-origin: 78px 78px;
+}
+
+.map__pin--main:hover ellipse {
+    fill: rgba(255, 86, 53, 0.9);
+}
+
+.map__pin--main::after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+
+    width: 0;
+    height: 0;
+
+    content: "";
+
+    border: solid 5px transparent;
+    border-top: solid 18px #fff;
+    border-bottom: 0;
+
+    -webkit-transition: -webkit-transform 300ms ease-in;
+    transition: -webkit-transform 300ms ease-in;
+    -o-transition: transform 300ms ease-in;
+    transition: transform 300ms ease-in;
+    transition: transform 300ms ease-in, -webkit-transform 300ms ease-in;
+    -webkit-transform: translate(-50%, -6px);
+    -ms-transform: translate(-50%, -6px);
+    transform: translate(-50%, -6px);
+
+    border-top-width: 22px;
+    border-top-color: #ff5635;
+}
+
+.map--faded .map__pin--main svg {
+    -webkit-transform: rotate(-20deg) scale(1);
+    -ms-transform: rotate(-20deg) scale(1);
+    transform: rotate(-20deg) scale(1);
+}
+
+.map--faded .map__pin--main::after {
+    -webkit-transform: translate(-50%, -30px);
+    -ms-transform: translate(-50%, -30px);
+    transform: translate(-50%, -30px);
+}
+
+.map__pin--main text {
+    font-size: 7px;
+    font-weight: 700;
+
+    fill: #ffffff;
+}
+
+
+/**
+ * Фильтры объявления
+ */
+
+.map__filters-container {
+    width: 100%;
+    background-color: rgba(3, 28, 45, 0.5);
+}
+
+.map__filters {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+
+    width: 960px;
+    height: 46px;
+    margin: 0 auto;
+
+    -webkit-transition: opacity 300ms ease-in;
+    -o-transition: opacity 300ms ease-in;
+    transition: opacity 300ms ease-in;
+
+    opacity: 1;
+}
+
+.map--faded .map__filters {
+    opacity: 0;
+}
+
+.map__filter {
+    height: 30px;
+    margin-right: 10px;
+
+    font-size: 14px;
+    vertical-align: middle;
+    cursor: pointer;
+
+    border: 1px solid transparent;
+}
+
+.map__filter:hover {
+    border: 1px solid #ffaa99;
+}
+
+.map__filter:focus {
+    outline: none;
+    -webkit-box-shadow: 0 0 2px 2px #ff6547;
+    box-shadow: 0 0 2px 2px #ff6547;
+}
+
+.map__feature {
+    display: inline-block;
+    overflow: hidden;
+
+    width: 30px;
+    height: 28px;
+
+    font-size: 0;
+    vertical-align: middle;
+    cursor: pointer;
+
+    background-color: #f8f8f8;
+    background-image: url("../../img/sprite-feature.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 25px 345px;
+
+    border-radius: 3px;
+}
+
+.map__feature--wifi {
+    background-position: 2px 5px;
+}
+
+.map__checkbox:checked + .map__feature--wifi {
+    background-position: 2px -172px;
+}
+
+.map__feature--dishwasher {
+    background-position: 2px -25px;
+}
+
+.map__checkbox:checked + .map__feature--dishwasher {
+    background-position: 2px -202px;
+}
+
+.map__feature--parking {
+    background-position: 3px -55px;
+}
+
+.map__checkbox:checked + .map__feature--parking {
+    background-position: 2px -232px;
+}
+
+.map__feature--washer {
+    background-position: 2px -85px;
+}
+
+.map__checkbox:checked + .map__feature--washer {
+    background-position: 2px -262px;
+}
+
+.map__feature--elevator {
+    background-position: 2px -143px;
+}
+
+.map__checkbox:checked + .map__feature--elevator {
+    background-position: 2px -321px;
+}
+
+.map__feature--conditioner {
+    background-position: 3px -114px;
+}
+
+.map__checkbox:checked + .map__feature--conditioner {
+    background-position: 2px -291px;
+}
+
+.map__feature:hover {
+    -webkit-box-shadow: inset 0 0 0 1px #ffaa99;
+    box-shadow: inset 0 0 0 1px #ffaa99;
+}
+
+.map__feature:focus,
+.map__checkbox:focus + .map__feature {
+    -webkit-box-shadow: 0 0 2px 2px #ff6547;
+    box-shadow: 0 0 2px 2px #ff6547;
+}
+
+.map__feature:active {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: #ff6547;
+}
+
+.map__checkbox:checked + .map__feature {
+    background-color: #ff6547;
+    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2) inset;
+}
