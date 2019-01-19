@@ -10,7 +10,6 @@ import Card from '../card/card';
 export default class Map extends Component {
   state = {
     onMainPinClicked: false,
-    // onPinClicked: false
   };
 
   onMainPinClick = () => {
@@ -19,14 +18,9 @@ export default class Map extends Component {
     })
   };
 
-  // onPinClickEvent = () => {
-  //   this.setState({onPinClicked: true
-  //   })
-  // };
-
   render() {
     const {houses, onHouseSelected} = this.props;
-    const {onMainPinClicked, onPinClicked} = this.state;
+    const {onMainPinClicked, selected} = this.state;
 
     let mapClassNames = 'map map--faded';
     let renderNewPins = '';
@@ -34,11 +28,9 @@ export default class Map extends Component {
     let newMapClass = mapClassNames.replace(' map--faded', '');
     let newPins = houses.map((item) => {
       return <Pin
-        onSelected={() => onHouseSelected(item.id)}
+        selectedHouse={() => console.log(onHouseSelected())}
         key={item.id}
         item={item}
-        // onPinClicked={this.onPinClickEvent}
-        // onPinClicked={() => (console.log('hi', item.id))}
       />
     });
 
@@ -49,15 +41,12 @@ export default class Map extends Component {
 
     let card = '';
 
-    const createNewCard = (item) => {
-      return <Card
-        key={item.id}
-        item={item}
-      />
+    const openCard = () => {
+      return <Card/>
     };
 
-    if (onPinClicked) {
-      card = createNewCard(houses[0]);
+    if (selected) {
+      card = openCard;
     }
 
 

@@ -98,26 +98,24 @@ export default class App extends Component {
 };
 
   onHouseSelected = (id) => {
-    this.setState(({housesData}) => {
+    this.setState(( {housesData} ) => {
       const idx = housesData.findIndex((el) => el.id === id);
-      // const oldItem = housesData[idx];
-      // const newItem = {...oldItem, selected: true};
-      //
-      // const newArray = [
-      //     ...housesData.slice(0, idx),
-      //   newItem,
-      //   ...housesData.slice(idx + 1)
-      // ];
-      // return {
-      //   housesData: newArray
-      // };
-      // return idx
-      console.log(idx);
+      const oldItem = housesData[idx];
+      const newItem = {...oldItem,
+        selected: !oldItem.selected};
+
+      const newArray = [
+          ...housesData.slice(0, idx),
+        newItem,
+        ...housesData.slice(idx + 1)
+      ];
+      return {
+        housesData: newArray
+      };
     })
   };
 
   render() {
-  // const indexOfSelectedHouse =
     return (
       <div>
         <main>
@@ -125,7 +123,7 @@ export default class App extends Component {
           <Map
             houses={this.state.housesData}
             onHouseSelected={this.onHouseSelected}
-          /> {/*получает свойство с массивом*/}
+          />
           <Notice/>
         </main>
         <Footer/>
