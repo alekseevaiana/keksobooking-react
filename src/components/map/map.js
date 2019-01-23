@@ -19,8 +19,8 @@ export default class Map extends Component {
   };
 
   render() {
-    const {houses, onHouseSelected} = this.props;
-    const {onMainPinClicked, selected} = this.state;
+    const {houses, onHouseSelected, clickedHouses, selected} = this.props;
+    const {onMainPinClicked} = this.state;
 
     let mapClassNames = 'map map--faded';
     let renderNewPins = '';
@@ -28,7 +28,7 @@ export default class Map extends Component {
     let newMapClass = mapClassNames.replace(' map--faded', '');
     let newPins = houses.map((item) => {
       return <Pin
-        selectedHouse={() => console.log(onHouseSelected())}
+        selectedHouse={() => onHouseSelected(item.id)}
         key={item.id}
         item={item}
       />
@@ -41,14 +41,16 @@ export default class Map extends Component {
 
     let card = '';
 
-    const openCard = () => {
-      return <Card/>
-    };
+    const openCard = clickedHouses.map((item) => {
+      return <Card
+        key={item.id}
+        item={item}
+      />
+    });
 
     if (selected) {
       card = openCard;
     }
-
 
     return (
       <section className={mapClassNames}>

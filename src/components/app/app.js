@@ -102,7 +102,7 @@ export default class App extends Component {
       const idx = housesData.findIndex((el) => el.id === id);
       const oldItem = housesData[idx];
       const newItem = {...oldItem,
-        selected: !oldItem.selected};
+        selected: true};
 
       const newArray = [
           ...housesData.slice(0, idx),
@@ -116,6 +116,7 @@ export default class App extends Component {
   };
 
   render() {
+    const clickedHouses = this.state.housesData.filter((el) => el.done);
     return (
       <div>
         <main>
@@ -123,6 +124,7 @@ export default class App extends Component {
           <Map
             houses={this.state.housesData}
             onHouseSelected={this.onHouseSelected}
+            clickedHouses={clickedHouses}
           />
           <Notice/>
         </main>
