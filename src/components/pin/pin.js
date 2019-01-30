@@ -3,12 +3,12 @@ import React, {Component} from 'react';
 export default class Pin extends Component {
 
   render() {
-    const {item, selectedHouse} = this.props;
+    const {item, onSelect} = this.props;
     const pinLocation = {left: item.location.x + 'px', top: item.location.y + 'px'};
     return (
       <div id="pin">
         <button
-          onClick={selectedHouse}
+          onClick={() => onSelect(item)}
           type="button"
           className="map__pin"
           style={pinLocation}>

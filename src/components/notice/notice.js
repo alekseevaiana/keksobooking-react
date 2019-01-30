@@ -3,11 +3,14 @@ import './notice.css';
 import AdForm from '../../components/ad-form/ad-form';
 
 
-const Notice = () => {
+const Notice = ({isActive, onClear, formValues}) => {
   return (
     <section className="notice">
       <h2 className="notice__title">Ваше объявление</h2>
-    <AdForm/>
+    <AdForm
+      isActive={isActive}
+      values={formValues}
+      onClear={onClear}/>
     </section>
   )
 };

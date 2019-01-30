@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './map.css';
-import MapFilters from '../map-filters/map-filters';
+import MapFilters from '../../components/map-filters/map-filters';
 
 import mapPinImg from '../../img/muffin-red.svg';
 import Pin from "../pin/pin";
@@ -8,19 +8,14 @@ import Card from '../card/card';
 
 
 export default class Map extends Component {
-  state = {
-    onMainPinClicked: false,
-  };
+
 
   onMainPinClick = () => {
-    this.setState({
-      onMainPinClicked: true,
-    })
+    this.props.onActivate()
   };
 
   render() {
-    const {houses, onHouseSelected, clickedHouses, selected} = this.props;
-    const {onMainPinClicked} = this.state;
+    const {houses, onHouseSelected, selectedHouse, isActive, closeCard} = this.props;
 
     let mapClassNames = 'map map--faded';
     let renderNewPins = '';
@@ -28,28 +23,25 @@ export default class Map extends Component {
     let newMapClass = mapClassNames.replace(' map--faded', '');
     let newPins = houses.map((item) => {
       return <Pin
-        selectedHouse={() => onHouseSelected(item.id)}
-        key={item.id}
+        onSelect={onHouseSelected}
+        key={item.offer.address}
         item={item}
       />
     });
 
-    if (onMainPinClicked) {
+    if (isActive) {
       mapClassNames = newMapClass;
       renderNewPins = newPins;
     }
 
     let card = '';
 
-    const openCard = clickedHouses.map((item) => {
-      return <Card
-        key={item.id}
-        item={item}
-      />
-    });
-
-    if (selected) {
-      card = openCard;
+    if (selectedHouse) {
+      card = <Card
+        key={selectedHouse.offer.address}
+        item={selectedHouse}
+        closeCard={closeCard}
+      />;
     }
 
     return (
