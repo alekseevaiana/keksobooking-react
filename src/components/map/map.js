@@ -2,29 +2,118 @@ import React, {Component} from 'react';
 import './map.css';
 import MapFilters from '../../components/map-filters/map-filters';
 
-import mapPinImg from '../../img/muffin-red.svg';
 import Pin from "../pin/pin";
 import Card from '../card/card';
+import MainPin from '../main-pin/main-pin';
 
+// a.b = 1
+// a['b'] = 1
+//
+// const name = 'b'
+// a[name]
 
 export default class Map extends Component {
-
+  state = {
+    filters: {
+      type: 'any',
+      price: 'any',
+      rooms: 'any',
+      guests: 'any',
+      wifi: false,
+      dishwasher: false,
+      parking: false,
+      washer: false,
+      elevator: false,
+      conditioner: false
+    }
+  };
 
   onMainPinClick = () => {
     this.props.onActivate()
   };
 
+  onFiltersChange = (name, value) => {
+
+    const newFilters = {
+      ...this.state.filters,
+    };
+    newFilters[name] = value;
+
+    this.setState({
+      filters: newFilters,
+    });
+
+    this.props.onChange()
+  };
+
+  filterHouses(houses) {
+    const {type, price, rooms, guests, wifi, dishwasher, parking, washer, elevator, conditioner} = this.state.filters;
+
+    return houses.filter(house => {
+      if (wifi && !house.offer.features.includes('wifi')) {
+        return false;
+      }
+
+      if (type !== 'any' && (house.offer.type !== type)) {
+        return false
+      }
+
+      if (rooms !== 'any' && (house.offer.rooms !== parseInt(rooms, 10))) {
+        return false
+      }
+
+      if (guests !== 'any' && (house.offer.guests !== parseInt(guests, 10))) {
+        return false
+      }
+
+      if (price !== 'any') {
+        if (price === 'low' && house.offer.price >= 10000) {
+          return false;
+        }
+        if (price === 'middle' && (house.offer.price < 10000 || house.offer.price >= 50000)) {
+          return false;
+        }
+        if (price === 'high' && house.offer.price < 50000) {
+          return false;
+        }
+      }
+
+      if (wifi && !house.offer.features.includes('wifi')) {
+        return false;
+      }
+      if (dishwasher && !house.offer.features.includes('dishwasher')) {
+        return false;
+      }
+      if (parking && !house.offer.features.includes('parking')) {
+        return false;
+      }
+      if (washer && !house.offer.features.includes('washer')) {
+        return false;
+      }
+      if (elevator && !house.offer.features.includes('elevator')) {
+        return false;
+      }
+      if (conditioner && !house.offer.features.includes('conditioner')) {
+        return false;
+      }
+
+      return true
+    })
+  }
+
   render() {
-    const {houses, onHouseSelected, selectedHouse, isActive, closeCard} = this.props;
+    const {houses, onHouseSelected, selectedHouse, isActive, userCoordinates, onMainPinCoordinatesChange} = this.props;
+    const {filters} = this.state;
 
     let mapClassNames = 'map map--faded';
     let renderNewPins = '';
 
     let newMapClass = mapClassNames.replace(' map--faded', '');
-    let newPins = houses.map((item) => {
+    const filtered = this.filterHouses(houses);
+    let newPins = filtered.map((item) => {
       return <Pin
         onSelect={onHouseSelected}
-        key={item.offer.address}
+        key={item.offer.title}
         item={item}
       />
     });
@@ -40,7 +129,6 @@ export default class Map extends Component {
       card = <Card
         key={selectedHouse.offer.address}
         item={selectedHouse}
-        closeCard={closeCard}
       />;
     }
 
@@ -50,24 +138,13 @@ export default class Map extends Component {
           <div className="map__overlay">
             <h2 className="map__title">И снова Токио!</h2>
           </div>
-          <button
-            className="map__pin map__pin--main" style={{left: 570 + 'px', top: 375 + 'px'}}
-            onClick={this.onMainPinClick}>
-            <img src={mapPinImg} width="40" height="44" draggable="false" alt="Метка объявления"/>
-            <svg viewBox="0 0 70 70" width="156" height="156" aria-label="Метка для поиска жилья">
-              <defs>
-                <path d="M35,35m-23,0a23,23 0 1,1 46,0a23,23 0 1,1 -46,0" id="tophalf"/>
-              </defs>
-              <ellipse cx="35" cy="35" rx="35" ry="35" fill="rgba(255, 86, 53, 0.7)"/>
-              <text>
-                {/*<textPath xlink:href="#tophalf" startOffset="0">Поставь меня куда-нибудь</textPath>*/}
-              </text>
-            </svg>
-          </button>
+         <MainPin userCoordinates={userCoordinates} onCoordinatesChange={onMainPinCoordinatesChange} onClick={this.onMainPinClick}/>
           {renderNewPins}
         </div>
         {card}
-        <MapFilters/>
+        <MapFilters
+          filters={filters}
+          onChange={this.onFiltersChange}/>
       </section>
     )
   }

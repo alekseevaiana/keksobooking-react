@@ -1,6 +1,6 @@
 import React from 'react';
 
-const TypeSelect = ({type, onChange, disabled, id}) => {
+const AdFormTypeSelect = ({type, onChange, disabled, id}) => {
   const onSelectChange = (evt) => {
     onChange(evt.target.value)
   };
@@ -13,4 +13,4 @@ const TypeSelect = ({type, onChange, disabled, id}) => {
   </select>
 };
 
-export default TypeSelect
+export default AdFormTypeSelect

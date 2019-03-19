@@ -11,11 +11,15 @@ import {getData} from "../../lib/backend";
 export default class App extends Component {
 
   state = {
-    isPageActive: true,
+    isPageActive: false,
     selectedHouse: null,
     housesData: [],
     form: {
       type: 'flat'
+    },
+    userCoordinates: {
+      x: 570,
+      y: 375
     }
   };
 
@@ -25,7 +29,7 @@ export default class App extends Component {
 
   onDataLoad = (houses) => {
     this.setState({housesData: houses})
-  }
+  };
 
   onHouseSelected = (item) => {
     this.setState({selectedHouse: item})
@@ -33,8 +37,6 @@ export default class App extends Component {
 
   handlePageActivation = () => {
     this.setState({isPageActive: true})
-
-
   };
 
   handleClear = () => {
@@ -43,6 +45,12 @@ export default class App extends Component {
 
   closeCard = () => {
     this.setState({selectedHouse: null})
+  };
+
+  onMainPinHandler = (coordinates) => {
+    this.setState({
+      userCoordinates: coordinates
+    })
   };
 
   render() {
@@ -56,12 +64,15 @@ export default class App extends Component {
             selectedHouse={this.state.selectedHouse}
             isActive={this.state.isPageActive}
             onActivate={this.handlePageActivation}
-            closeCard={this.closeCard}
+            onChange={this.closeCard}
+            userCoordinates={this.state.userCoordinates}
+            onMainPinCoordinatesChange={this.onMainPinHandler}
           />
           <Notice
           isActive={this.state.isPageActive}
             onClear={this.handleClear}
             formValues={this.state.form}
+            userCoordinates={this.state.userCoordinates}
           />
         </main>
         <Footer/>

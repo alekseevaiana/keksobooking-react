@@ -2,34 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c7f7a5-59fb-4109-8f2c-804046c665a4" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/default.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/avatars/user08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/htmla-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/keksobooking.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/map.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/muffin-grey.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/muffin-red.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/muffin-white.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/pins.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sprite-feature.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/sprite-social.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/price-input/price-input.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/type-select/type-select.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/lib/backend.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/main-pin/main-pin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ad-form/ad-form.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ad-form/ad-form.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/app/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/app/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/card/card.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/card/card.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map-filters/map-filters.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map-filters/map-filters.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/map-filters/map-filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map-filters/map-filters.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/map/map.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/map/map.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/notice/notice.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/notice/notice.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pin/pin.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pin/pin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/type-select/type-select.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ad-form-type-select/ad-form-type-select.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -43,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/app/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-144">
-              <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+            <state relative-caret-position="-354">
+              <caret line="10" column="44" selection-end-line="10" selection-end-column="44" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
               </folding>
@@ -55,11 +37,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="notice.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/notice/notice.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+            <state>
+              <caret column="7" selection-start-column="7" selection-end-column="7" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -67,14 +49,38 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ad-form.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/components/ad-form/ad-form.js">
+      <file leaf-file-name="map.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/map/map.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
+            <state relative-caret-position="772">
+              <caret line="135" column="41" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
               <folding>
-                <element signature="e#0#26#0" expanded="true" />
+                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#242#252#0" />
+                <element signature="e#435#445#0" />
+                <element signature="e#678#863#0" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main-pin.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/main-pin/main-pin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+              <folding>
+                <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="card.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/card/card.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -82,17 +88,20 @@
       <file leaf-file-name="price-input.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/price-input/price-input.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
+            <state>
+              <caret column="26" selection-end-line="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="type-select.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/type-select/type-select.js">
+      <file leaf-file-name="map-filters.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/map-filters/map-filters.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="5" selection-end-column="4" />
+            <state relative-caret-position="15">
+              <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -129,6 +138,9 @@
       <find>muffin-red</find>
       <find>img</find>
       <find>/img/map</find>
+      <find>close</find>
+      <find>onActivate</find>
+      <find>onMainPinClick</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -145,26 +157,27 @@
         <option value="$PROJECT_DIR$/src/components/notice/notice.css" />
         <option value="$PROJECT_DIR$/src/components/app/app.css" />
         <option value="$PROJECT_DIR$/src/index.js" />
-        <option value="$PROJECT_DIR$/src/components/map-filters/map-filters.css" />
-        <option value="$PROJECT_DIR$/src/components/map-filters/map-filters.js" />
         <option value="$PROJECT_DIR$/src/components/pin/pin.css" />
         <option value="$PROJECT_DIR$/src/components/card/card.css" />
         <option value="$PROJECT_DIR$/public/index.html" />
-        <option value="$PROJECT_DIR$/src/components/pin/pin.js" />
         <option value="$PROJECT_DIR$/src/lib/backend.js" />
-        <option value="$PROJECT_DIR$/src/components/notice/notice.js" />
-        <option value="$PROJECT_DIR$/src/components/app/app.js" />
         <option value="$PROJECT_DIR$/src/components/type-select/TypeSelect.js" />
         <option value="$PROJECT_DIR$/src/components/type-select/type-select.js" />
         <option value="$PROJECT_DIR$/src/components/price-input/price-input.js" />
         <option value="$PROJECT_DIR$/src/components/footer/footer.js" />
         <option value="$PROJECT_DIR$/src/components/promo/promo.js" />
         <option value="$PROJECT_DIR$/src/components/map/map.css" />
-        <option value="$PROJECT_DIR$/src/components/map/map.js" />
         <option value="$PROJECT_DIR$/src/components/footer/footer.css" />
         <option value="$PROJECT_DIR$/src/css/style.css" />
         <option value="$PROJECT_DIR$/src/components/card/card.js" />
+        <option value="$PROJECT_DIR$/src/components/notice/notice.js" />
         <option value="$PROJECT_DIR$/src/components/ad-form/ad-form.js" />
+        <option value="$PROJECT_DIR$/src/components/map-filters/map-filters.css" />
+        <option value="$PROJECT_DIR$/src/components/map-filters/map-filters.js" />
+        <option value="$PROJECT_DIR$/src/components/pin/pin.js" />
+        <option value="$PROJECT_DIR$/src/components/app/app.js" />
+        <option value="$PROJECT_DIR$/src/components/map/map.js" />
+        <option value="$PROJECT_DIR$/src/components/main-pin/main-pin.js" />
       </list>
     </option>
   </component>
@@ -180,9 +193,8 @@
     <handled-path value="$PROJECT_DIR$/node_modules" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
-    <option name="y" value="23" />
-    <option name="width" value="1024" />
-    <option name="height" value="829" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -218,7 +230,7 @@
               <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ad-form" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
@@ -232,21 +244,7 @@
               <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="footer" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="notice" type="462c0819:PsiDirectoryNode" />
+              <item name="map-filters" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
@@ -254,32 +252,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
               <item name="price-input" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="promo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="type-select" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="keksobooking-react" type="b2602c69:ProjectViewProjectNode" />
-              <item name="keksobooking-react" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="lib" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -340,7 +312,7 @@
       <workItem from="1547551539037" duration="19566000" />
       <workItem from="1547803212993" duration="21540000" />
       <workItem from="1548257773002" duration="5680000" />
-      <workItem from="1548676346106" duration="17472000" />
+      <workItem from="1548676346106" duration="42921000" />
     </task>
     <task id="LOCAL-00001" summary="вывод номера выбранного пина в консоль">
       <created>1547904004656</created>
@@ -360,7 +332,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="82771000" />
+    <option name="totallyTimeSpent" value="108220000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="6" />
@@ -370,6 +342,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32900944" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32900944" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="7" />
@@ -383,7 +356,6 @@
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.32900944" />
       <window_info anchor="bottom" id="Messages" order="7" />
     </layout>
     <layout-to-restore>
@@ -580,13 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/map-filters/map-filters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="885">
-          <caret line="59" column="26" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ad-form/ad-form.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="771">
@@ -598,16 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="59" lean-forward="true" selection-start-line="5" selection-start-column="59" selection-end-line="5" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="7" lean-forward="true" selection-start-column="7" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -628,13 +583,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="39" selection-start-line="5" selection-start-column="32" selection-end-line="5" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/pin/pin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="30" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -679,27 +627,98 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/card/card.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ad-form-type-select/ad-form-type-select.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="7" lean-forward="true" selection-start-line="13" selection-start-column="7" selection-end-line="13" selection-end-column="7" />
+        <state relative-caret-position="45">
+          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="5" selection-end-column="4" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/map/map.js">
+    <entry file="file://$PROJECT_DIR$/src/components/ad-form/ad-form.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="32" lean-forward="true" selection-start-line="6" selection-start-column="32" selection-end-line="6" selection-end-column="32" />
+        <state relative-caret-position="907">
+          <caret line="87" column="141" lean-forward="true" selection-start-line="87" selection-start-column="141" selection-end-line="87" selection-end-column="141" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/notice/notice.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="24" selection-start-line="11" selection-start-column="24" selection-end-line="11" selection-end-column="24" />
+        <state relative-caret-position="195">
+          <caret line="13" column="38" selection-start-line="13" selection-start-column="38" selection-end-line="13" selection-end-column="38" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/map-filters/map-filters.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="21" selection-start-line="1" selection-start-column="21" selection-end-line="1" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pin/pin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="25" selection-start-line="5" selection-start-column="25" selection-end-line="5" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/main-pin/main-pin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="56" column="51" selection-start-line="56" selection-start-column="51" selection-end-line="56" selection-end-column="51" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/map/map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="772">
+          <caret line="135" column="41" selection-start-line="135" selection-start-column="41" selection-end-line="135" selection-end-column="41" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#242#252#0" />
+            <element signature="e#435#445#0" />
+            <element signature="e#678#863#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="7" selection-start-column="7" selection-end-column="7" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/card/card.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/price-input/price-input.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="26" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/map-filters/map-filters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="26" selection-start-line="1" selection-start-column="26" selection-end-line="1" selection-end-column="26" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
@@ -708,34 +727,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/app/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-144">
-          <caret line="13" column="22" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="22" />
+        <state relative-caret-position="-354">
+          <caret line="10" column="44" selection-end-line="10" selection-end-column="44" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/type-select/type-select.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="1" selection-start-line="3" selection-start-column="1" selection-end-line="5" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/price-input/price-input.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="26" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ad-form/ad-form.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="27" column="13" lean-forward="true" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>

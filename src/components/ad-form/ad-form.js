@@ -2,40 +2,17 @@ import React from 'react';
 import './ad-form.css';
 
 import avatarImg from '../../img/muffin-grey.svg';
-import TypeSelect from '../../components/type-select/type-select';
+import AdFormTypeSelect from '../ad-form-type-select/ad-form-type-select';
 import PriceInput from '../../components/price-input/price-input';
 
-const TimeInSelect = ({disabled, onChange, checkout, id}) => {
-  const onCheckinChange = (evt) => {
-    onChange(evt.target.value)
-  };
 
-  let time = "12:00";
-
-  if (checkout === "13:00") {
-    time = "13:00"
-  }
-
-  if (checkout === "14:00") {
-    time = "14:00"
-  }
-
-  return (
-    <select id={id} name="timein" disabled={disabled} onChange={onCheckinChange} value={time}>
-      <option value="12:00">После 12</option>
-      <option value="13:00">После 13</option>
-      <option value="14:00">После 14</option>
-    </select>
-  )
-};
-
-const TimeOutSelect = ({disabled, onChange, checkin, id}) => {
+const TimeSelect = ({disabled, onChange, time, id}) => {
   const onCheckOutChange = (evt) => {
     onChange(evt.target.value)
   };
 
   return (
-    <select id={id} name="timeout" disabled={disabled} onChange={onCheckOutChange}>
+    <select value={time} id={id} name="timeout" disabled={disabled} onChange={onCheckOutChange}>
       <option value="12:00">После 12</option>
       <option value="13:00">После 13</option>
       <option value="14:00">После 14</option>
@@ -46,24 +23,26 @@ const TimeOutSelect = ({disabled, onChange, checkin, id}) => {
 export default class AdForm extends React.Component {
   state = {
     type: 'flat',
-    checkin: '12:00',
-    checkout: '12:00'
+    time: '12:00',
+    title: ''
   };
 
   onTypeChange = (type) => {
-    this.setState({type})
+    this.setState({type: type})
   };
 
-  onCheckInChange = (checkin) => {
-    this.setState({checkin})
+  onTimeChange = (time) => {
+    this.setState({time})
   };
 
-  onCheckOutChange = (checkout) => {
-    this.setState({checkout})
+  onTitleChange = (evt) => {
+    this.setState({
+      title: evt.target.value})
   };
+
 
   render() {
-    const {isActive, onClear} = this.props;
+    const {isActive, onClear, userCoordinates} = this.props;
 
     return (
       <form className="ad-form "
@@ -95,78 +74,54 @@ export default class AdForm extends React.Component {
             disabled={!isActive}
             minLength="30"
             maxLength="100"
+            value={this.state.title}
+            onChange={this.onTitleChange}
           />
         </fieldset>
         <fieldset className="ad-form__element ad-form__element--wide">
           <label className="ad-form__label" htmlFor="address">Адрес</label>
-          <input id="address" name="address" type="text" readOnly disabled={!isActive}/>
+
+
+
+
+
+          <input id="address" name="address" type="text" readOnly disabled={!isActive} value={`${userCoordinates.x}, ${userCoordinates.y}`}/>
+
+
+
+
+
+
+
         </fieldset>
         <fieldset className="ad-form__element">
           <label className="ad-form__label" htmlFor="type">Тип жилья</label>
-
-
-
-
-          <TypeSelect
+          <AdFormTypeSelect
             disabled={!isActive}
             value={this.state.type} id="type"
             onChange={this.onTypeChange}/>
-
-
         </fieldset>
         <fieldset className="ad-form__element">
           <label className="ad-form__label" htmlFor="price">Цена за ночь, руб.</label>
-
-
           <PriceInput
             disabled={!isActive}
             type={this.state.type}
             id="price"/>
-
-
         </fieldset>
-
         <fieldset className="ad-form__element ad-form__element--time">
           <label className="ad-form__label" htmlFor="timein">Время заезда и выезда</label>
-
-
-
-
-
-
-
-
-
-
-
-
-          <TimeInSelect
+          <TimeSelect
             disabled={!isActive}
-            checkin={this.state.checkin}
-            checkout={this.state.checkout}
-            onChange={this.onCheckInChange}
+            time={this.state.time}
+            onChange={this.onTimeChange}
             id="timein"
           />
-          <TimeOutSelect
+          <TimeSelect
             disabled={!isActive}
-            checkout={this.state.checkout}
-            checkin={this.state.checkin}
-            onChange={this.onCheckOutChange}
+            time={this.state.time}
+            onChange={this.onTimeChange}
             id="timeout"
           />
-
-
-
-
-
-
-
-
-
-
-
-
-
         </fieldset>
 
         <fieldset className="ad-form__element">
